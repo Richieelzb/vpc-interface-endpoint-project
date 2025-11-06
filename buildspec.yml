@@ -6,7 +6,7 @@ phases:
       python: 3.8
     commands:
       - curl -O https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_linux_amd64.zip
-      - unzip terraform_1.13.4_linux_amd64.zip
+      - unzip terraform_1.13.3_linux_amd64.zip
       - mv terraform /usr/local/bin/
   pre_build:
     commands:
