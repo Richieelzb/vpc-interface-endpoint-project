@@ -14,7 +14,13 @@ resource "aws_iam_role" "ec2_iam_role" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "eks-AmazonEKSWorkerNodePolicy" {
+resource "aws_iam_role_policy_attachment" "ec2-AmazonSQSFullAccessPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
   role       = aws_iam_role.ec2_iam_role.name
+}
+
+
+resource "aws_iam_instance_profile" "ec2_profile" {
+  name = "dev-wallawalla-ec2-instance-profile"
+  role = aws_iam_role.ec2_role.name
 }
