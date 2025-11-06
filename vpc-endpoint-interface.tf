@@ -1,4 +1,4 @@
-resource "aws_vpc_endpoint" "ec2" {
+/*resource "aws_vpc_endpoint" "ec2" {
   vpc_id            = aws_vpc.main.id
   service_name      = "com.amazonaws.us-west-2.ec2"
   vpc_endpoint_type = "Interface"
@@ -8,4 +8,4 @@ resource "aws_vpc_endpoint" "ec2" {
   ]
 
   private_dns_enabled = true
-}
+}*/
