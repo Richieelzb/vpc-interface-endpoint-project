@@ -50,9 +50,9 @@ resource "aws_security_group" "ec2_connect_sg" {
   vpc_id      = module.vpc1.vpc_id
 
   egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
     cidr_blocks = ["10.10.0.0/16"]
   }
 
