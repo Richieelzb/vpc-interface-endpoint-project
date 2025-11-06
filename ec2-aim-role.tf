@@ -22,5 +22,5 @@ resource "aws_iam_role_policy_attachment" "ec2-AmazonSQSFullAccessPolicy" {
 
 resource "aws_iam_instance_profile" "ec2_profile" {
   name = "dev-wallawalla-ec2-instance-profile"
-  role = aws_iam_role.ec2_role.name
+  role = aws_iam_role.ec2_iam_role.name
 }
