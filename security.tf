@@ -1,3 +1,28 @@
+resource "aws_security_group" "public-sg-ec2" {
+  name        = "allow-pub-sg-ec2"
+  description = "allow-pub-sg-ec2"
+  vpc_id      = module.vpc1.vpc_id
+
+  ingress {
+    description = "TLS from VPC"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+   egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "pub-ec2-sg"
+  }
+}
+
 resource "aws_security_group" "private-sg-ec2" {
   name        = "allow-pvt-sg-ec2"
   description = "allow-pvt-sg-ec2"

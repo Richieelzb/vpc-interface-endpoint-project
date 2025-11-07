@@ -24,6 +24,10 @@ variable "vpc_cidr_block_vpc1" {
   type = string
 }
 
+variable "vpc_public_subnets_vpc1" {
+  type = list(string)
+}
+
 variable "vpc_private_subnets_vpc1" {
   type = list(string)
 }
