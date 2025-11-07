@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2-private-1" {
-  ami                  = data.aws_ami.my-data-ami.id
+  ami                  = "ami-01dc115371ac25703"
   instance_type        = var.instance-type-list[0]
   key_name             = var.key-pair
   subnet_id            = module.vpc1.private_subnets[1]
